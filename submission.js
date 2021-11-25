@@ -5,7 +5,7 @@ const findSum = function(array) {
     }
     return sum;
   };
-};
+
 
 const findFrequency = function(array) {
     
