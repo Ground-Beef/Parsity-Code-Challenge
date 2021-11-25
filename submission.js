@@ -70,11 +70,24 @@ const largestPair = function(array) {
 return highScore;
 };
 
-const removeParenth = function(str) {
-  let result = str.replace('(', '');
-   result = result.replace(')', '')
-   return result;
-};
+const removeParenth = function(str)  {
+   let indx1;
+   let indx2;
+   let testArry = Array.from(str);
+   for( i = 0; i < testArry.length; i++){
+        if (testArry[i] === '('){
+            indx1 = testArry.indexOf('(');
+        }
+        else if (testArry[i] === ')') {
+            indx2 = testArry.indexOf(')');
+        }
+   }
+   for (j = indx1; j <= indx2; j ++){
+       testArry.splice(j, 1);
+   }
+   return testArry.join('');
+ 
+}
 
 const scoreScrabble = function(str) {
   let arr = Array.from(str);
