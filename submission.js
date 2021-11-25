@@ -70,9 +70,10 @@ const largestPair = function(array) {
 return highScore;
 };
 
-const removeParenth = function(str)  {
+const removeParenth = function(str) {
    let indx1;
    let indx2;
+
    let testArry = Array.from(str);
    for( i = 0; i < testArry.length; i++){
         if (testArry[i] === '('){
@@ -81,11 +82,12 @@ const removeParenth = function(str)  {
         else if (testArry[i] === ')') {
             indx2 = testArry.indexOf(')');
         }
-   }
-   for (j = indx1; j <= indx2; j ++){
-       testArry.splice(j, 1);
-   }
-   return testArry.join('');
+        }
+
+        let indx3 = indx2 - indx1 + 1;
+        
+        testArry.splice(indx1, indx3);
+        return testArry.join('');
  
 }
 
